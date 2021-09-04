@@ -1,0 +1,8 @@
+.page{
+    background-color: #F3F7FA;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    font-family: "Open Sans";
+}

@@ -1,0 +1,9 @@
+.main__tab_is-active{
+    color:white;
+    background-color: #2196F3;
+}
+
+.main__tab_is-active:hover{
+    cursor:pointer;
+    background-color: #2196F3;
+}

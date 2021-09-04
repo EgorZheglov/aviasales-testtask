@@ -1,0 +1,11 @@
+.sidebar__label{
+    width: 20px;
+    height: 20px;
+    border:1px solid #2196F3;
+    border-radius: 2px;
+    margin-right: 10px;
+    background-position: center;
+    background-repeat: no-repeat;
+    cursor: pointer;
+}
+

@@ -1,0 +1,18 @@
+.sidebar__item{
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+    height: 40px;
+    background-color: white;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    display:flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.sidebar__item:hover{
+    background-color: #F1FCFF;
+}

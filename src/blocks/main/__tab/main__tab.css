@@ -1,0 +1,19 @@
+.main__tab{
+    width:50%;
+    height: 100%;
+    text-align: center;
+    border:none;
+    background-color: #FFFFFF;
+    outline: none;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.main__tab:hover{
+    background-color: #F1FCFF;
+    cursor: pointer;
+}

@@ -1,0 +1,29 @@
+@import url(./vendor/normalize.css);
+
+@import url(./vendor/font-face.css);
+
+@import url(./blocks/page/page.css);
+@import url(./blocks/header/header.css);
+@import url(./blocks/header/__logo/header__logo.css);
+@import url(./blocks/content/content.css);
+@import url(./blocks/sidebar/sidebar.css);
+@import url(./blocks/sidebar/__header/sidebar__header.css);
+@import url(./blocks/sidebar/__item/sidebar__item.css);
+@import url(./blocks/sidebar/__checkbox/sidebar__checkbox.css);
+@import url(./blocks/sidebar/__label/sidebar__label.css);
+@import url(./blocks/sidebar/__label/_checked/sidebar__label_checked.css);
+@import url(./blocks/main/main.css);
+@import url(./blocks/main/__tabs/main__tabs.css);
+@import url(./blocks/main/__tab/main__tab.css);
+@import url(./blocks/main/__tab/_is-active/main__tab_is-active.css);
+@import url(./blocks/main/__ticket/main__ticket.css);
+@import url(./blocks/main/__header/main__header.css);
+@import url(./blocks/main/__logo/main__logo.css);
+@import url(./blocks/main/__price/mian__price.css);
+@import url(./blocks/main/__info/main__info.css);
+@import url(./blocks/main/__info-header/main__info-header.css);
+@import url(./blocks/main/__info-value/main__info-value.css);
+
+.border{
+  outline:1px solid red
+}
