@@ -5,7 +5,6 @@ function Sidebar(){
     const [isChecked, setChecked] = React.useState(false)
     
     function toggleChecked(evt){
-        console.log(evt.target.id)
         setChecked(!isChecked);
     }
 
