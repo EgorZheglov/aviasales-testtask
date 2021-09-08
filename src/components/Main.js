@@ -15,30 +15,42 @@ function Main(){
         .then(res =>{
           api.getInitialTickets(res.searchId)
           .then(res => {
-             console.log(res)
-             setTicketsArray(res.tickets)
+             setTicketsArray(res.tickets.sort(speedSort))
+
              setIsloading(false);
           })
         })
       }, [])
 
-    function setSortSpeed(){
-        setSortBySpeed(true)
-        setSortByPrice(false)
-        ticketsArray.sort((a,b) => {
-            let timeA = a.segments[0].duration + a.segments[1].duration
-            let timeB = b.segments[0].duration + b.segments[1].duration
 
-            return timeA - timeB;
-        })
+    function speedSort(a, b){
+        let timeA = a.segments[0].duration + a.segments[1].duration
+        let timeB = b.segments[0].duration + b.segments[1].duration
+
+        return timeA - timeB;
+    }
+
+    function priceSort(a, b){
+        return a.price - b.price
+    }
+
+    function setSortSpeed(){
+        setSortBySpeed(true);
+        setSortByPrice(false);
+
+        setTicketsArray(ticketsArray.sort(speedSort));
     }
 
     function setSortPrice(){
         setSortBySpeed(false);
         setSortByPrice(true);
-        ticketsArray.sort((a,b) => a.price - b.price)
+
+        setTicketsArray(ticketsArray.sort(priceSort));
     }
 
+    function showTickets(){
+        setTicketsCount(ticketsCount + 5)
+    }
 
     return (
         <div className='main'>
@@ -47,6 +59,7 @@ function Main(){
               <button className={`main__tab ${sortByPrice ? `main__tab_is-active`:``}`} onClick={setSortPrice}>Самый дешевый</button>
           </div>
           {!isLoading && ticketsArray.slice(0, ticketsCount).map((ticket) => <Ticket data={ticket}/>)}
+          <button className='main__button' onClick={showTickets}>Показать еще 5 билетов!</button>
         </div>
     );
 }

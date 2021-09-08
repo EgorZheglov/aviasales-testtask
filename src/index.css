@@ -23,7 +23,5 @@
 @import url(./blocks/main/__info/main__info.css);
 @import url(./blocks/main/__info-header/main__info-header.css);
 @import url(./blocks/main/__info-value/main__info-value.css);
+@import url(./blocks/main/__button/main__button.css);
 
-.border{
-  outline:1px solid red
-}

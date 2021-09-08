@@ -36,9 +36,9 @@ function Ticket(props){
                     {/*В документации к api не указано, в каком формате приходит время*/}
                 </div>
                 <div className='main__info-item'>
-                    {data.segments[0].stops !== 0 ? (<>
+                    {data.segments[0].stops.length !== 0 ? (<>
                     <h3 className='main__info-header'>{data.segments[0].stops.length === 1 ? '1 пересадка' : `${data.segments[0].stops.length} пересадки`}</h3>
-                    <div className='main__info-value'>{data.segments[0].stops.reduce((prevVal, el) => prevVal + ' ' + el, '')}</div> </>):(<h3 className='main__info-header'>0 пересадок</h3>)}
+                    <div className='main__info-value'>{data.segments[0].stops.reduce((prevVal, el) => prevVal + ', ' + el)}</div> </>):(<h3 className='main__info-header'>0 пересадок</h3>)}
                 </div>
                 <div className='main__info-item'>
                     <h3 className='main__info-header'>{data.segments[1].origin} – {data.segments[1].destination}</h3>
@@ -49,10 +49,10 @@ function Ticket(props){
                     <div className='main__info-value'>{Math.floor(data.segments[1].duration/60)}ч {data.segments[1].duration % 60}м</div>
                 </div>
                 <div className='main__info-item'>
-                    {data.segments[1].stops !== 0 ? (<>
+                    {data.segments[1].stops.length !== 0 ? (<>
                     <h3 className='main__info-header'>{data.segments[1].stops.length === 1 ? '1 пересадка' : `${data.segments[1].stops.length} пересадки`}</h3>
-                    <div className='main__info-value'>{data.segments[1].stops.reduce((prevVal, el) => prevVal + ' ' + el, '')}</div> </>
-                    ):(<h3 className='main__info-header'>0 пересадок</h3>)}
+                    <div className='main__info-value'>{data.segments[1].stops.reduce((prevVal, el) => prevVal + ', ' + el)}</div> 
+                    </>):(<h3 className='main__info-header'>0 пересадок</h3>)}
                 </div>
             </div>
         </div>
