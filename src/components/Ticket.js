@@ -1,12 +1,8 @@
-import logo from '../images/s7.png'
 
 function Ticket(props){
 
     const data = props.data;
      
-
-    console.log(data)
-
     const dateOrigin = new Date(data.segments[0].date)
 
     const originArrivalHours = (dateOrigin.getHours() + Math.floor(data.segments[0].duration/60)) % 24;

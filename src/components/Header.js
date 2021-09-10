@@ -1,6 +1,5 @@
 import logo from '../images/Logo.svg'
 import React from 'react';
-import ReactDOM from 'react-dom';
 
 function Header () {
 

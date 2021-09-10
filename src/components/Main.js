@@ -58,7 +58,8 @@ function Main(){
               <button className={`main__tab ${sortBySpeed ? `main__tab_is-active`:``}`} onClick={setSortSpeed}>Самый быстрый</button>
               <button className={`main__tab ${sortByPrice ? `main__tab_is-active`:``}`} onClick={setSortPrice}>Самый дешевый</button>
           </div>
-          {!isLoading && ticketsArray.slice(0, ticketsCount).map((ticket) => <Ticket data={ticket}/>)}
+          {!isLoading && ticketsArray.slice(0, ticketsCount).map((ticket, i) => <Ticket key={i} data={ticket}/>)}
+          {/*Вообще, индекс массива не стоит передовать как индентефикатор, но в данной работе на об компонентах билетов не происходит никаких событй, поэтому можно опустить этот момент */}
           <button className='main__button' onClick={showTickets}>Показать еще 5 билетов!</button>
         </div>
     );
