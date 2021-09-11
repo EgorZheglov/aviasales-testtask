@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 function Sidebar(){
 
@@ -9,22 +10,27 @@ function Sidebar(){
     const [isTwoStopsChecked, setTwoStopsChecked] = React.useState(false);
     const [isThreeStopsChecked, setThreeStopsChecked] = React.useState(false);
     
-    const [sortArray, setSortArray] = React.useState([]);
+    //const [sortArray, setSortArray] = React.useState([]);
     //Массив для одобренных вариантов количества пересадок
+
+    const dispatch = useDispatch()
+    const stopsArray = useSelector(state => state.stopsArray)
 
     function changeSortArray(evt){
         //Функция, обновляющая массив количества пересадок в зависимости от состояния input'a
         if(evt.target.checked){
-            setSortArray([...sortArray, +evt.target.value])
+            dispatch({type:'CHANGE_ARRAY', payload:[...stopsArray, +evt.target.value]})
         }else{
-            setSortArray(sortArray.filter(el => el !== +evt.target.value))
+            dispatch({type:'CHANGE_ARRAY', payload:stopsArray.filter(el => el !== +evt.target.value)})
         }
         return;
     }
 
+
+
     function toggleAllStopsChecked(evt){
-        setAllStopsChecked(!isAllStopsChecked);
-        changeSortArray(evt)
+        setAllStopsChecked(evt.target.checked);
+        dispatch({type:'TOGGLE_STOPS', payload:evt.target.checked})
     }
 
     function toggleZeroStopsChecked(evt){
@@ -46,7 +52,6 @@ function Sidebar(){
         setThreeStopsChecked(!isThreeStopsChecked);
         changeSortArray(evt)
     }
-
 
     return (
         <div className='sidebar'>
