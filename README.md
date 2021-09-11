@@ -1,6 +1,4 @@
-Sidebar in progress.
-
-test task by aviasales, using React.js
+test task by aviasales, using React & Redux
 
 Link on task: https://github.com/KosyanMedia/test-tasks/tree/master/aviasales_frontend
 
